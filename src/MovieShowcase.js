@@ -5,7 +5,11 @@ import movieData from './data.js'
 export default class MovieShowcase extends Component {
 
   generateMovieCards = () => {
-    // map over your movieData array and return the correct 
+    const movies = movieData.map(movie => {
+      return  <MovieCard {...movie} /> //this spread operator is taking the entire movie object and spreading it, dont need to do this whole <MovieCard title={movie.title} etc etc
+        
+    })
+    return movies
   }
 
   render() {
